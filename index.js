@@ -24,12 +24,8 @@ nextServer.prepare().then(() => {
 
     app.get('*', function(req, res) {
         const path = req.originalUrl;
-        console.log(path)
-
-        console.log(`Next should render: ${req.subDomainRoute}${path}`);
 
         nextServer.render(req, res, `${req.subDomainRoute}/${path}`, req.query);
-        // handle(req, res);
     });
 
     app.listen(3000, function() {})
